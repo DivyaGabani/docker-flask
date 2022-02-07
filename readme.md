@@ -1,4 +1,4 @@
-##Docker Nginx Flask Project Setup
+# Docker Nginx Flask Project Setup
 
 Just Run:
 
