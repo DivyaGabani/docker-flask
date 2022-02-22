@@ -3,29 +3,110 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     {% block head %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
 
         <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
     {% endblock %}
 
 </head>
 <body>
-<div id="main_menu" class="center big color">
-    <h1> Divya's Homepage</h1>
-</div>
-<div id="main_content">
-    <p><span class="big color">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent semper ultricies erat vitae volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed aliquet posuere porta. Nulla sem metus, pharetra vitae ante id, feugiat lobortis velit. Donec mollis eros maximus est viverra venenatis. Donec sed lorem sem. Mauris sit amet pulvinar neque. Nulla facilisi. Vestibulum sit amet maximus eros.
-</p><p>
-    <span class="big color">S</span>ed sagittis nisl varius, dictum dui vitae, convallis dolor. Nullam fringilla, ligula vitae venenatis venenatis, mi odio tempus purus, eget volutpat mauris mauris quis sapien. Maecenas blandit nunc quis laoreet scelerisque. Nunc vestibulum volutpat purus. Sed id libero et arcu fermentum maximus at nec mi. Morbi dolor odio, rhoncus ut lectus sit amet, imperdiet faucibus justo. Vestibulum elementum mauris nec libero porttitor aliquam. Sed dapibus sit amet purus at rutrum. Duis fermentum at ipsum vel interdum. Fusce ac augue aliquet, posuere mi ut, gravida est. Nulla pharetra, elit laoreet auctor cursus, justo quam suscipit leo, eu semper purus sapien feugiat nisi. Pellentesque a luctus dolor, nec molestie arcu. Nunc semper tincidunt sem, sit amet euismod lacus auctor a. Nam lobortis lorem ex, vel faucibus nunc rutrum vitae. Phasellus et tortor at eros consectetur feugiat vel luctus erat.
-</p><p>
-    <span class="big color">D</span>uis non imperdiet leo, et accumsan massa. Donec non iaculis est. Fusce fringilla, nulla at venenatis consequat, arcu eros elementum eros, sed lobortis dolor tellus sit amet lectus. Morbi dictum purus non felis luctus vehicula. Fusce pharetra odio sit amet nunc facilisis, quis egestas erat hendrerit. Cras nec eros quis sapien pulvinar cursus. Aliquam rutrum, turpis sed dignissim condimentum, ante lectus blandit arcu, non volutpat lacus mi non tellus. Nunc justo orci, euismod et enim quis, interdum blandit neque. Nunc molestie lorem nisl, vel rhoncus est dignissim sit amet. Quisque dapibus libero eu augue vestibulum, mollis congue dolor eleifend. Cras finibus rhoncus leo, eget consectetur ex aliquet sit amet. Nam id urna eu tellus placerat commodo sed at orci.
-</p><p>
-    <span class="big color">M</span>auris non vulputate velit, vitae dignissim lectus. Ut id turpis vel nisi ultricies tempor sed ut lacus. Morbi nec condimentum orci. Donec pretium congue venenatis. Suspendisse interdum purus non dui efficitur, id ultricies urna elementum. Nulla nibh purus, lobortis nec nunc vel, posuere pharetra felis. Duis sit amet justo at nulla vehicula pretium egestas in libero. Duis non nisl quis risus ornare sollicitudin. Quisque ultrices, arcu nec ultrices pretium, leo magna eleifend magna, ut cursus nisi purus placerat est. Pellentesque ornare nulla nunc, ut auctor diam luctus id.
-</p><p>
-    <span class="big color">S</span>ed quis gravida mauris. Maecenas a convallis massa, id ultricies ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam placerat tempus ex, et condimentum velit convallis eu. Phasellus facilisis et enim vestibulum volutpat. Duis viverra lacus non nisi tincidunt, mattis bibendum nisi lobortis. Maecenas vestibulum turpis a lobortis consequat. Sed orci dolor, ultricies nec pharetra vitae, vehicula et ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam sem odio, vehicula eget nisi nec, tincidunt cursus purus. Vestibulum elementum massa vel mauris maximus, vel maximus enim aliquam. Nullam vestibulum pellentesque velit, non ultricies justo commodo id. Nullam ultricies turpis et eleifend egestas. Sed volutpat iaculis eleifend. Cras feugiat ligula a risus aliquam, quis pharetra augue pharetra.
-</p>
-</div>
+<div class="container">
+    <header class="mb-3">
+        <!-- As a link -->
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <h1>Homepage</h1>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', filename='images/sample.jpeg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/sample.jpeg') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/sample.jpeg') }}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's
+                            content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's
+                            content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's
+                            content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        -->
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>
